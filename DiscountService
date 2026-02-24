@@ -1,0 +1,11 @@
+package com.example.SpringBootDemo1;
+
+import org.springframework.stereotype.Component;
+
+//@Component
+public class DiscountService {
+
+    public String getDiscount() {
+        return "You got 10% discount!";
+    }
+}
