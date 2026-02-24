@@ -1,0 +1,44 @@
+package com.example.SpringBootDemo1;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/notification")
+public class NotificationController {
+
+    @Autowired
+    @Qualifier("emailService")  // change to smsService to test
+    private NotificationService notificationService;
+
+    // GET → Read
+    @GetMapping("/get")
+    public String getNotification() {
+        return "GET: " + notificationService.send();
+    }
+
+    // POST → Create
+    @PostMapping("/create")
+    public String createNotification() {
+        return "POST: Notification Created Successfully";
+    }
+
+    // PUT → Update (Complete update)
+    @PutMapping("/update")
+    public String updateNotification() {
+        return "PUT: Notification Updated Successfully";
+    }
+
+    // PATCH → Partial update
+    @PatchMapping("/modify")
+    public String modifyNotification() {
+        return "PATCH: Notification Partially Updated";
+    }
+
+    // DELETE → Remove
+    @DeleteMapping("/delete")
+    public String deleteNotification() {
+        return "DELETE: Notification Deleted Successfully";
+    }
+}
