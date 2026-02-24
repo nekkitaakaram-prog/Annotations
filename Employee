@@ -1,0 +1,11 @@
+package com.example.SpringBootDemo1;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Employee {
+
+    public void show() {
+        System.out.println("Employee Bean Created by Spring!");
+    }
+}
