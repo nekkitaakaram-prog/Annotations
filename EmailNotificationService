@@ -1,0 +1,11 @@
+package com.example.SpringBootDemo1;
+
+import org.springframework.stereotype.Service;
+
+@Service("emailService")
+public class EmailNotificationService implements NotificationService {
+
+    public String send() {
+        return "Email Sent!";
+    }
+}
